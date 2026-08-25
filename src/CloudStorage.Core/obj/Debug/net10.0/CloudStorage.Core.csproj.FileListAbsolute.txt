@@ -1,0 +1,11 @@
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/bin/Debug/net10.0/CloudStorage.Core.deps.json
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/bin/Debug/net10.0/CloudStorage.Core.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/bin/Debug/net10.0/CloudStorage.Core.pdb
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/CloudStorage.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/CloudStorage.Core.AssemblyInfoInputs.cache
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/CloudStorage.Core.AssemblyInfo.cs
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/CloudStorage.Core.csproj.CoreCompileInputs.cache
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/CloudStorage.Core.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/refint/CloudStorage.Core.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/CloudStorage.Core.pdb
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Core/obj/Debug/net10.0/ref/CloudStorage.Core.dll

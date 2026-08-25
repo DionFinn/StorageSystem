@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CloudStorage.Api/CloudStorage.Api.csproj" />
+    <Project Path="src/CloudStorage.Core/CloudStorage.Core.csproj" />
+    <Project Path="src/CloudStorage.Infrastructure/CloudStorage.Infrastructure.csproj" />
+    <Project Path="src/CloudStorage.Storage/CloudStorage.Storage.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CloudStorage.IntegrationTests/CloudStorage.IntegrationTests.csproj" />
+  </Folder>
+</Solution>
