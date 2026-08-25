@@ -13,3 +13,4 @@
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Infrastructure/obj/Debug/net10.0/refint/CloudStorage.Infrastructure.dll
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Infrastructure/obj/Debug/net10.0/CloudStorage.Infrastructure.pdb
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Infrastructure/obj/Debug/net10.0/ref/CloudStorage.Infrastructure.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Infrastructure/obj/Debug/net10.0/CloudStorage.Infrastructure.sourcelink.json

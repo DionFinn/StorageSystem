@@ -37,3 +37,4 @@
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/obj/Debug/net10.0/CloudStorage.Api.pdb
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/obj/Debug/net10.0/CloudStorage.Api.genruntimeconfig.cache
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/obj/Debug/net10.0/ref/CloudStorage.Api.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/obj/Debug/net10.0/CloudStorage.Api.sourcelink.json

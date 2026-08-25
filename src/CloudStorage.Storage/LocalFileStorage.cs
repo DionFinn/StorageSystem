@@ -1,6 +1,4 @@
 using System.IO;
-using System.Runtime.InteropServices;
-using System.Security;
 using System.Threading.Tasks;
 using CloudStorage.Core.Interfaces;
 
@@ -8,7 +6,7 @@ namespace CloudStorage.Storage
 {
 	public class LocalFileStorage : IFileStorage
     {
-        private readonly string _fileStoragePath = "./storage";
+        private readonly string _fileStoragePath = "../../../../../Documents/Storage/";
         public async Task<string> StoreAsync(Stream data, string path)
         {   
             string fullpath = Path.Combine(_fileStoragePath, path);
@@ -36,7 +34,7 @@ namespace CloudStorage.Storage
             string fullpath = Path.Combine(_fileStoragePath, path);
             if(!Directory.Exists(_fileStoragePath))
             {
-                throw new Exception("base path does not exist: " + fullpath);
+                throw new Exception("base path does not exist: " + _fileStoragePath);
             }
 
             if(!File.Exists(fullpath))
@@ -55,7 +53,7 @@ namespace CloudStorage.Storage
 
             if(!Directory.Exists(_fileStoragePath))
             {
-                throw new Exception("base path does not exist: " + fullpath);
+                throw new Exception("base path does not exist: " + _fileStoragePath);
             }
 
             if(!File.Exists(fullpath))
