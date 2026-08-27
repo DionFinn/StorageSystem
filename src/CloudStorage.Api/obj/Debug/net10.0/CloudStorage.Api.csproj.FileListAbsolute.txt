@@ -38,3 +38,8 @@
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/obj/Debug/net10.0/CloudStorage.Api.genruntimeconfig.cache
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/obj/Debug/net10.0/ref/CloudStorage.Api.dll
 /Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/obj/Debug/net10.0/CloudStorage.Api.sourcelink.json
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/bin/Debug/net10.0/Npgsql.dll
+/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
