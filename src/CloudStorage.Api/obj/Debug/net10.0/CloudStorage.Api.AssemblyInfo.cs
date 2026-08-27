@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("6f3d590f-02dd-4f98-ae2c-0b1c90ade239")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CloudStorage.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afa6de3ac6a465fdec03563d353994a7064e3d66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e777a7e60d0f01a3a4345cb9e8adb148caf7e4b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("CloudStorage.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CloudStorage.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
