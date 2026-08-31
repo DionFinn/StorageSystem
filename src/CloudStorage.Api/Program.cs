@@ -21,8 +21,6 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<CloudStorageDbContext>();
 
-    
-
     try
     {
         await db.Database.CanConnectAsync();
