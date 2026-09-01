@@ -1,16 +1,20 @@
 using System.IO;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
 using CloudStorage.Core.Interfaces;
 
 namespace CloudStorage.Storage
 {
-	public class LocalFileStorage : IFileStorage
+	public class LocalFileStorage(string rootPath) : IFileStorage
     {
-        private readonly string _fileStoragePath = "../../../../../Documents/Storage/";
+        private readonly string _fileStoragePath = rootPath;
+
+
         public async Task<string> StoreAsync(Stream data, string path)
         {   
             string fullpath = Path.Combine(_fileStoragePath, path);
+
+            Console.WriteLine("Storing file at: " + fullpath);
+            Console.WriteLine($"Storage root path: {Path.GetFullPath(_fileStoragePath)}");
 
             if(!Directory.Exists(_fileStoragePath))
             {

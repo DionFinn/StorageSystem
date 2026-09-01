@@ -3,7 +3,6 @@ using CloudStorage.Core.Interfaces;
 using CloudStorage.Storage;
 using Microsoft.EntityFrameworkCore;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CloudStorageDbContext>(options =>
@@ -16,11 +15,19 @@ builder.Services.AddDbContext<CloudStorageDbContext>(options =>
 
    options.UseNpgsql(connectionString);
 });
-builder.Services.AddScoped<IFileStorage, LocalFileStorage>();
+
 builder.Services.AddControllers();
 
-var app = builder.Build();
+string? root = builder.Configuration["Storage:RootPath"];
 
+if(string.IsNullOrEmpty(root))
+{
+    throw new Exception("Storage:RootPath has not been configured in appsettings.json");
+}
+
+builder.Services.AddScoped<IFileStorage>(sp => new LocalFileStorage(root));
+
+var app = builder.Build();
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
@@ -31,11 +38,10 @@ using (var scope = app.Services.CreateScope())
     {
         await db.Database.CanConnectAsync();
         Console.WriteLine("Database Connection Successful");
-        app.Run();
     } catch (Exception e)
     {
-        Console.WriteLine(e);
-        Console.WriteLine("Database Connection Failed");
+        throw new Exception("Database Connection Failed", e);
     }
-
 }
+
+app.Run();

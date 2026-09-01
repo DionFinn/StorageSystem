@@ -3,10 +3,11 @@ namespace CloudStorage.IntergreationTests;
 
 public class LocalFileTest
 {
+    string testRootPath = Path.Combine("../../../../../Documents/Storage");
     [Fact]
     public async Task StoreAsync_WhenCalledWithValidData_CreatesFile()
     {
-        var storage = new LocalFileStorage();
+        var storage = new LocalFileStorage(testRootPath);
 
         var testData = "Hello, World!";
         var testPath = "testfile.txt";
@@ -24,7 +25,7 @@ public class LocalFileTest
     [Fact]
     public async Task OpenReadAsync_WhenCalledWithExistingFile_ReturnsStream()
     {
-        var storage = new LocalFileStorage();
+        var storage = new LocalFileStorage(testRootPath);
         var testData = "OpenReadAsync Works!";
         var testPath = "OpenReadTest.txt";
 
@@ -49,7 +50,7 @@ public class LocalFileTest
     [Fact]
     public async Task DeleteAsync_WhenCalledWithExistingFile_DeletesFile()
     {
-        var storage = new LocalFileStorage();
+        var storage = new LocalFileStorage(testRootPath);
         var testData = "DeleteAsync Works!";
         var testPath = "DeleteTest.txt";
 
@@ -67,7 +68,7 @@ public class LocalFileTest
     [Fact]
     public async Task DeleteAsync_WhenCalledWithNonExistingFile_ReturnsFalse()
     {
-        var storage = new LocalFileStorage();
+        var storage = new LocalFileStorage(testRootPath);
         var testPath = "NonExistingFile.txt";
 
         bool deleted = await storage.DeleteAsync(testPath);
@@ -79,7 +80,7 @@ public class LocalFileTest
 
     public async Task OpenReadAsync_WhenCalledWithNonExistentPath_ReturnsExcpetion()
     {
-        var storage = new LocalFileStorage();
+        var storage = new LocalFileStorage(testRootPath);
         var testPath = "doesnotexist.txt";
 
         var exception = await Assert.ThrowsAsync<Exception>(async () => await storage.OpenReadAsync(testPath));
@@ -88,7 +89,7 @@ public class LocalFileTest
     [Fact]
     public async Task TaskStoreAsync_WhenCalledWithExistingFile_ReturnsException()
     {
-        var storage = new LocalFileStorage();
+        var storage = new LocalFileStorage(testRootPath);
         var testData = "StoreAsync Works!";
         var testPath = "StoreTest.txt";
 

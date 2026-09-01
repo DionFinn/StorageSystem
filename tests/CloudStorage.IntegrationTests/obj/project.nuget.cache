@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3fybcIf3Gl4=",
+  "dgSpecHash": "fBznQfX0bV8=",
   "success": true,
   "projectFilePath": "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/tests/CloudStorage.IntegrationTests/CloudStorage.IntegrationTests.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,6 @@
     "/Users/finnerty/.nuget/packages/microsoft.entityframeworkcore.relational/10.0.4/microsoft.entityframeworkcore.relational.10.0.4.nupkg.sha512",
     "/Users/finnerty/.nuget/packages/microsoft.extensions.caching.abstractions/10.0.9/microsoft.extensions.caching.abstractions.10.0.9.nupkg.sha512",
     "/Users/finnerty/.nuget/packages/microsoft.extensions.caching.memory/10.0.9/microsoft.extensions.caching.memory.10.0.9.nupkg.sha512",
-    "/Users/finnerty/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.4/microsoft.extensions.configuration.abstractions.10.0.4.nupkg.sha512",
     "/Users/finnerty/.nuget/packages/microsoft.extensions.dependencyinjection/10.0.9/microsoft.extensions.dependencyinjection.10.0.9.nupkg.sha512",
     "/Users/finnerty/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.9/microsoft.extensions.dependencyinjection.abstractions.10.0.9.nupkg.sha512",
     "/Users/finnerty/.nuget/packages/microsoft.extensions.logging/10.0.9/microsoft.extensions.logging.10.0.9.nupkg.sha512",
