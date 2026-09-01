@@ -3,6 +3,8 @@ using CloudStorage.Core.Entities;
 using CloudStorage.Core.Interfaces;
 using CloudStorage.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace CloudStorage.Api.Controllers;
 
@@ -33,7 +35,7 @@ public class FilesController(CloudStorageDbContext context, IFileStorage fileSto
 
         return file;
     }
-// [TODO] will need to have cascading delete for the stored file in S3 as well as database entry. 
+// [TODO] will need to have cascading delete for the stored file in S3 as well as database entry.
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteStoredFile(Guid id)
     {
@@ -72,6 +74,40 @@ public class FilesController(CloudStorageDbContext context, IFileStorage fileSto
         await _context.SaveChangesAsync();
 
         return Ok(file);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<StoredFile>> UploadFile(IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest("No file uploaded.");
+        }
+
+        using var stream = file.OpenReadStream();
+        var hashbytes = await SHA256.HashDataAsync(stream);
+        var hash = Convert.ToHexString(hashbytes);
+
+
+        var storedFile = new StoredFile
+        {
+            Id = Guid.NewGuid(),
+            OriginalName = file.FileName,
+            ContentType = file.ContentType,
+            SizeBytes = file.Length,
+            StoragePath = "",
+            Sha256Hash = hash,
+            UploadedAt = DateTimeOffset.UtcNow
+        };
+
+        storedFile.StoragePath = Path.Combine(storedFile.Id.ToString());
+
+        using var storageStream = file.OpenReadStream();
+
+        await _fileStorage.StoreAsync(storageStream, storedFile.StoragePath);
+        _context.StoredFiles.Add(storedFile);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetStoredFile), new { id = storedFile.Id }, storedFile);
     }
 }
 

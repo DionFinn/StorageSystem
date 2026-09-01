@@ -1,5 +1,6 @@
 using System.IO;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 using CloudStorage.Core.Interfaces;
 
 namespace CloudStorage.Storage
