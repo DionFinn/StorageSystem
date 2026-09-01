@@ -35,7 +35,7 @@ public class FilesController(CloudStorageDbContext context, IFileStorage fileSto
 
         return file;
     }
-// [TODO] will need to have cascading delete for the stored file in S3 as well as database entry.
+
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteStoredFile(Guid id)
     {
@@ -46,9 +46,17 @@ public class FilesController(CloudStorageDbContext context, IFileStorage fileSto
             return NotFound();
         }
 
-        await _fileStorage.DeleteAsync(file.StoragePath);
-        _context.StoredFiles.Remove(file);
-        await _context.SaveChangesAsync();
+        try
+        {
+            _context.StoredFiles.Remove(file);
+            await _context.SaveChangesAsync();
+
+            await _fileStorage.DeleteAsync(file.StoragePath);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
 
         return NoContent();
     }
@@ -104,9 +112,24 @@ public class FilesController(CloudStorageDbContext context, IFileStorage fileSto
 
         using var storageStream = file.OpenReadStream();
 
-        await _fileStorage.StoreAsync(storageStream, storedFile.StoragePath);
-        _context.StoredFiles.Add(storedFile);
-        await _context.SaveChangesAsync();
+        bool fileStored = false;
+
+        try
+        {
+            await _fileStorage.StoreAsync(storageStream, storedFile.StoragePath);
+            fileStored = true;
+
+            _context.StoredFiles.Add(storedFile);
+            await _context.SaveChangesAsync();
+        
+        } catch (Exception ex)
+        {   
+            if(fileStored == true)
+            {
+                await _fileStorage.DeleteAsync(storedFile.StoragePath);
+            }
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }    
         return CreatedAtAction(nameof(GetStoredFile), new { id = storedFile.Id }, storedFile);
     }
 }
