@@ -31,9 +31,11 @@ using (var scope = app.Services.CreateScope())
     {
         await db.Database.CanConnectAsync();
         Console.WriteLine("Database Connection Successful");
+        app.Run();
     } catch (Exception e)
     {
         Console.WriteLine(e);
+        Console.WriteLine("Database Connection Failed");
     }
 
 }
