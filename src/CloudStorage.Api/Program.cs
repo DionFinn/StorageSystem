@@ -1,4 +1,6 @@
 using CloudStorage.Infrastructure.Persistence;
+using CloudStorage.Core.Interfaces;
+using CloudStorage.Storage;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -14,8 +16,12 @@ builder.Services.AddDbContext<CloudStorageDbContext>(options =>
 
    options.UseNpgsql(connectionString);
 });
+builder.Services.AddScoped<IFileStorage, LocalFileStorage>();
+builder.Services.AddControllers();
 
 var app = builder.Build();
+
+app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
