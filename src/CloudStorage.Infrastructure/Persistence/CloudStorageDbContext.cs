@@ -1,5 +1,6 @@
 using CloudStorage.Core.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace CloudStorage.Infrastructure.Persistence;
 
@@ -59,7 +60,7 @@ public class CloudStorageDbContext : DbContext
             entity.ToTable("Chunk");
             
             entity.HasKey(e => e.Hash);
-
+            
             entity.Property(e => e.Hash)
             .HasColumnName("Hash")
             .HasMaxLength(64)
@@ -71,13 +72,38 @@ public class CloudStorageDbContext : DbContext
 
             entity.Property(e => e.StoragePath)
             .HasColumnName("StoragePath")
-            .IsRequired()
-            .HasMaxLength(2048);
+            .IsRequired();
 
             entity.Property(e => e.CreatedAt)
             .HasColumnName("CreatedAt")
             .IsRequired()
             .HasColumnType("timestamp with time zone");   
+        });
+
+        modelBuilder.Entity<FileChunk>(entity =>
+        {
+            entity.ToTable("FileChunk");
+
+            entity.HasKey(e => new
+            {
+                e.FileId,
+                e.ChunkIndex
+            });
+
+            entity.Property(e => e.FileId)
+            .HasColumnName("FileId")
+            .IsRequired();
+
+            entity.Property(e => e.ChunkIndex)
+            .HasColumnName("ChunkIndex")
+            .IsRequired();
+
+            entity.Property(e => e.ChunkHash)
+            .HasColumnName("ChunkHash")
+            .IsRequired()
+            .HasMaxLength(64)
+            .IsFixedLength();
+
         });
     }
 }
