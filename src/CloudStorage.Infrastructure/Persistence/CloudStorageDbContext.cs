@@ -12,6 +12,8 @@ public class CloudStorageDbContext : DbContext
     }
 
     public DbSet<StoredFile> StoredFiles { get; set; } 
+    public DbSet<Chunk> Chunks { get; set; }
+    public DbSet<FileChunk> FileChunks { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -50,6 +52,32 @@ public class CloudStorageDbContext : DbContext
                 .HasColumnName("UploadedAt")
                 .IsRequired()
                 .HasColumnType("timestamp with time zone"); 
+        });
+
+        modelBuilder.Entity<Chunk>(entity =>
+        {
+            entity.ToTable("Chunk");
+            
+            entity.HasKey(e => e.Hash);
+
+            entity.Property(e => e.Hash)
+            .HasColumnName("Hash")
+            .HasMaxLength(64)
+            .IsFixedLength();
+
+            entity.Property(e => e.SizeBytes)
+            .HasColumnName("SizeBytes")
+            .IsRequired();
+
+            entity.Property(e => e.StoragePath)
+            .HasColumnName("StoragePath")
+            .IsRequired()
+            .HasMaxLength(2048);
+
+            entity.Property(e => e.CreatedAt)
+            .HasColumnName("CreatedAt")
+            .IsRequired()
+            .HasColumnType("timestamp with time zone");   
         });
     }
 }
