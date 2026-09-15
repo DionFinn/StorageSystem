@@ -1724,6 +1724,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "CloudStorage.Api >= 1.0.0",
+      "CloudStorage.Storage >= 1.0.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 10.0.9",
       "Microsoft.NET.Test.Sdk >= 17.14.1",
       "coverlet.collector >= 6.0.4",
@@ -1759,6 +1760,9 @@
           "projectReferences": {
             "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/CloudStorage.Api.csproj": {
               "projectPath": "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/CloudStorage.Api.csproj"
+            },
+            "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Storage/CloudStorage.Storage.csproj": {
+              "projectPath": "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Storage/CloudStorage.Storage.csproj"
             }
           }
         }

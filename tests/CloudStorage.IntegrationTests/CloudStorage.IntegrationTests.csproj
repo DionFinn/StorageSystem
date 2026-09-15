@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\CloudStorage.Api\CloudStorage.Api.csproj" />
+    <ProjectReference Include="..\..\src\CloudStorage.Storage\CloudStorage.Storage.csproj" />
   </ItemGroup>
 
 </Project>

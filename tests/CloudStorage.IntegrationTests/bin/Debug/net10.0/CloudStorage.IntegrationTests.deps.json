@@ -9,6 +9,7 @@
       "CloudStorage.IntegrationTests/1.0.0": {
         "dependencies": {
           "CloudStorage.Api": "1.0.0",
+          "CloudStorage.Storage": "1.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "10.0.9",
           "Microsoft.NET.Test.Sdk": "17.14.1",
           "xunit": "2.9.3"

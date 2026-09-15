@@ -1546,6 +1546,9 @@
             "projectReferences": {
               "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/CloudStorage.Api.csproj": {
                 "projectPath": "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Api/CloudStorage.Api.csproj"
+              },
+              "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Storage/CloudStorage.Storage.csproj": {
+                "projectPath": "/Users/finnerty/Documents/Personal/LearningLab/filestorage/CloudStorage/src/CloudStorage.Storage/CloudStorage.Storage.csproj"
               }
             }
           }
